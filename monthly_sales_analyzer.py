@@ -1,5 +1,4 @@
-# Example data
-sales_data = [
+python3 monthly_sales_analyzer.pysales_data = [
     {"day": 1, "product_a": 202, "product_b": 142, "product_c": 164},
     {"day": 2, "product_a": 206, "product_b": 121, "product_c": 338},
     {"day": 3, "product_a": 120, "product_b": 152, "product_c": 271},
@@ -47,6 +46,14 @@ def top_product(data):
     pass
 
 
+def worst_selling_day(data):
+    """Finds the day with the worst total sales."""
+    pass
+
+
+    def best_thrid_selling_day(data):
+    """Finds the third day with the highest total sales."""
+    pass
 
 # Function tests
 print("Total sales of product_a:", total_sales_by_product(sales_data, "product_a"))
