@@ -23,37 +23,74 @@ python3 monthly_sales_analyzer.pysales_data = [
 
 def total_sales_by_product(data, product_key):
     """Calculates the total sales of a specific product in 30 days."""
-    pass
+    return sum(row[product_key] for row in data)
 
 
 def average_daily_sales(data, product_key):
     """Calculates the average daily sales of a specific product."""
-    pass
+    return sum(row[product_key] for row in data) / len(data)
 
 
 def best_selling_day(data):
     """Finds the day with the highest total sales."""
-    pass
+    first = True
+    best_day = None
+    best_total = 0
+
+    for r in data:
+        total = 0
+        for k in r:
+            if k != "day":
+                total = total + r[k]
+
+        if first:
+            best_total = total
+            best_day = r["day"]
+            first = False
+        else:
+            if total > best_total:
+                best_total = total
+                best_day = r["day"]
+
+    return best_day
 
 
 def days_above_threshold(data, product_key, threshold):
     """Counts how many days the sales of a product exceeded a given threshold."""
-    pass
+    days_above = 0
+    for r in data:
+        total = 0
+        for c in r:
+            if c = product_key
+                if r[c] > 300
+                    days_above = days_above + 1
+    return days_above
 
 
 def top_product(data):
     """Determines which product had the highest total sales in 30 days."""
-    pass
+    product_a = 0
+    product_b = 0
+    product_c = 0
+    for r in data:
+        for a in r:
+            if a = "product_a":
+                total_a = total_a + r[a]
+        for b in r:
+            if b = "product_b":
+                total_b = total_b + r[b]
+        for c in r:
+            if c = "product_c":
+                total_c = total_c + r[c]
+    max_top_product = max(total_a, total_b, total_c)
+    if max_top_product = total_a :
+        top_product = "product_a"
+    elif max_top_product = total_b:
+        top_product = "product_b"
+    else:
+        top_product = "product_c"
+    return top_product
 
-
-def worst_selling_day(data):
-    """Finds the day with the worst total sales."""
-    pass
-
-
-    def best_thrid_selling_day(data):
-    """Finds the third day with the highest total sales."""
-    pass
 
 # Function tests
 print("Total sales of product_a:", total_sales_by_product(sales_data, "product_a"))
